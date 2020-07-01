@@ -1,30 +1,20 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom'
 import Header from '../../components/Header'
 import Table from '../../components/Table'
 
 function Posts (){
-    const [data, setData] = useState([])
-
-    useEffect(() => {
-      async function getPosts(){
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        const dataAPI = await response.json();
-        setData(dataAPI);
-        console.log(dataAPI)
-      }
-      getPosts();
-    }, [])
     const head = [
-      'UserId',
-      'Id',
-      'Title',
-      'Body'
+      'userId',
+      'id',
+      'title',
+      'body'
   ]
     return (
       <>
-      <Header/>
-      <h2>Posts</h2>
-      <Table data={data} head={head}/>
+        <Link to='/home'><Header/></Link>
+        <h2>Posts</h2>
+        <Table head={head} title={'/posts'}/>
       </>
     )
   }

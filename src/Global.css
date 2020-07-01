@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+h2{
+  text-align: left;
+  width: 68%;
+  margin:30px auto;
+  color: #5f3473;
+}
