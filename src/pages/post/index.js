@@ -1,9 +1,32 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect} from 'react';
 import Header from '../../components/Header'
-class Post extends Component{
-  render(){
-    return <h2>Post</h2>
-  }
-}
+import Table from '../../components/Table'
 
-export default Post;
+function Posts (){
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+      async function getPosts(){
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const dataAPI = await response.json();
+        setData(dataAPI);
+        console.log(dataAPI)
+      }
+      getPosts();
+    }, [])
+    const head = [
+      'UserId',
+      'Id',
+      'Title',
+      'Body'
+  ]
+    return (
+      <>
+      <Header/>
+      <h2>Posts</h2>
+      <Table data={data} head={head}/>
+      </>
+    )
+  }
+
+export default Posts;

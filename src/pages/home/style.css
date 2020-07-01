@@ -1,16 +1,23 @@
-*{
-  color: white;
-}
 .botoes{
-  width: 30%;
-  padding: 30px;
+  max-width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-  box-shadow: 5px 10px 20px rgb(239, 196, 245);
-  background: #5F3473;
+  margin: 20vh auto;
 }
-.botoes Link{
+h2{
+  color: #5f3473;
+  margin-bottom: 30px;
+}
+
+.botoes a{
+  width: 100%;
+  text-decoration: none;
+  padding: 20px;
+  text-align: center;
   margin: 10px;
+  text-transform: uppercase;
+  box-shadow: 5px 10px 10px rgb(242, 222, 245);
+  background: rgb(239, 196, 245);
 }

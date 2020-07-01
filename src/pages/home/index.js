@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom'
 import Header from '../../components/Header'
 import './style.css'
-class Home extends Component{
-  render(){
+
+function Home(){
     return (
       <>
       <Header/>
         <div className='botoes'>
+        <h2>Escolha o que deseja ver:</h2>
           <Link to='/todo'>Todo</Link>
           <Link to='/post'>Post</Link>
           <Link to='/album'>Album</Link>
@@ -15,6 +16,5 @@ class Home extends Component{
       </>
     )
   }
-}
 
 export default Home;
